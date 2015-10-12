@@ -1,0 +1,311 @@
+<openerp>
+<data>
+
+        <!--======================FORM VIEW =======================-->
+
+    <template id="report_header_custom_facturae_report_cb" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='page']" position="replace">
+            <div class="page">
+            <div class="row" style="font-size:9px">
+                <table class="table">
+
+                     <tr>
+                        <td style="width:60%;border: 1px solid white;"><strong></strong></td>
+                        <td style="width:20%;border: 1px solid white;"></td>
+                        <td class="text-left" style="width:70%;border: 1px solid white;"><strong>LUGAR DE EXPEDICION</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" style="border: 1px solid white; border-collapse: collapse;">
+                            <table style="border: 0px; border-collapse: collapse; ">                                
+                                
+                                <tr>
+                                    <td class="text-center" style="padding:2px;padding-right: 9px;"><span t-field="o.company_emitter_id.partner_id.street"/>
+                                        <span t-if="o.company_emitter_id.partner_id.l10n_mx_street3"> No.Ext. <span t-field="o.company_emitter_id.partner_id.l10n_mx_street3"/></span>
+                                        <span t-if="o.company_emitter_id.partner_id.l10n_mx_street4"> No.Int. <span t-field="o.company_emitter_id.partner_id.l10n_mx_street4"/></span>Col. <span t-field="o.company_emitter_id.partner_id.street2"/></td>
+                                    <td class="text-center" style="padding:2px;">
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="text-center" style="padding:2px;padding-right: 9px;"><span t-field="o.company_emitter_id.partner_id.l10n_mx_city2"/></td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" style="padding:2px;padding-right: 9px;"><span t-field="o.company_emitter_id.partner_id.city"/> <span t-field="o.company_emitter_id.partner_id.zip"/>, <span t-field="o.company_emitter_id.partner_id.state_id.name"/></td>
+                                    <td class="text-center" style="padding:2px;"> </td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                </tr>
+                                
+                                <tr >
+                                    <td class="text-center" style="width:40%;padding:2px;padding-right: 9px;"><span t-field="o.company_emitter_id.partner_id.vat_split"/></td>
+                                    <td class="text-center" style="width:80%;padding:2px;"></td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="text-center" style="padding:2px;padding-right: 9px;">Tel.<span t-field="o.company_emitter_id.partner_id.phone"/></td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                </tr>                                
+                                <tr>
+                                    <td class="text-center" style="padding:2px;padding-right: 9px;">Régimen Fiscal</td>
+                                    <td class="text-left" style="padding:2px;"><span t-field="o.company_emitter_id.partner_id.regimen_fiscal_id.name"/></td>
+                                    <td class="text-center" style="padding:2px;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td><table style="border: 0px; border-collapse: collapse; "></table></td>
+                        <td style="border: 1px solid white; border-collapse: collapse;">
+                          <table class="text-center" style="border: 0px; border-collapse: collapse; ">
+                                
+                                <tr>
+                                    
+                                    <td class="text-center" style="padding:2px;">
+                                        <span t-field="o.address_issued_id.street"/>
+                                        <span t-if="o.address_issued_id.l10n_mx_street3"> No.Ext. <span t-field="o.address_issued_id.l10n_mx_street3"/></span>
+                                        <span t-if="o.address_issued_id.l10n_mx_street4"> No.Int. <span t-field="o.address_issued_id.l10n_mx_street4"/>Col. <span t-field="o.address_issued_id.street2"/></span>
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr>
+                                    
+                                    <td class="text-center"><span t-field="o.address_issued_id.l10n_mx_city2"/></td>
+                                    
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="text-center" style="padding:2px;">
+                                        <span t-field="o.address_issued_id.city"/> <span t-field="o.address_issued_id.zip"/>, <span t-field="o.address_issued_id.state_id.name"/></td>
+                                    
+                                </tr>
+
+                                <tr>
+                                    
+                                    <td class="text-center" style="width:80%;padding:2px;"><span t-field="o.address_issued_id.vat_split"/></td>
+                                    
+                                </tr>
+
+                                <tr>
+                                    
+                                    <td class="text-center" style="padding:2px;">Tel.<span t-field="o.company_emitter_id.partner_id.phone"/></td>
+
+                                </tr>
+                            </table>  
+                        </td>           
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                        <td style="border: 1px solid gray; border-collapse: collapse;">
+                            <table style="border: 0px; border-collapse: collapse; ">                                
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong>Facturar a:</strong></td>
+                                    <td style="padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.name if o.partner_id.parent_id else o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong></strong></td>
+                                    <td style="padding:2px;">
+                                        <span t-if="o.partner_id.parent_id">
+                                            <span t-field="o.partner_id.parent_id.street"/>
+                                            <span t-if="o.partner_id.parent_id.l10n_mx_street3"> No.Ext. <span t-field="o.partner_id.parent_id.l10n_mx_street3"/></span>
+                                            <span t-if="o.partner_id.parent_id.l10n_mx_street4"> No.Int. <span t-field="o.partner_id.parent_id.l10n_mx_street4"/></span>                                        
+                                        </span>
+                                        <span t-if="not o.partner_id.parent_id">
+                                            <span t-field="o.partner_id.street"/>
+                                            <span t-if="o.partner_id.l10n_mx_street3"> No.Ext. <span t-field="o.partner_id.l10n_mx_street3"/></span>
+                                            <span t-if="o.partner_id.l10n_mx_street4"> No.Int. <span t-field="o.partner_id.l10n_mx_street4"/>Col.<span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.street2 if o.partner_id.parent_id else o.partner_id.street2"/></span>                                        
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong></strong></td>
+                                    <td style="padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.l10n_mx_city2 if o.partner_id.parent_id else o.partner_id.l10n_mx_city2"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong></strong></td>
+                                    <td style="padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.city if o.partner_id.parent_id else o.partner_id.city"/> CP: <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.zip if o.partner_id.parent_id else o.partner_id.zip"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong></strong></td>
+                                    <td style="padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.state_id.name if o.partner_id.parent_id else o.partner_id.state_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong></strong></td>
+                                    <td style="padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.country_id.name if o.partner_id.parent_id else o.partner_id.country_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:20%;padding:2px;padding-right:9px;"><strong></strong></td>
+                                    <td style="width:80%;padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.partner_id.parent_id.vat_split if o.partner_id.parent_id else o.partner_id.vat_split"/>
+                                    </td>
+                                </tr>                              
+                            </table>
+                        </td>
+                        <td style="border: 1px solid gray; border-collapse: collapse;">
+                          <table style="border: 0px; border-collapse: collapse; ">
+
+                                <tr >
+                                    <td style="width:40%;padding:2px;padding-right:9px;"><strong>FACTURA</strong></td>
+                                    <td style="padding:2px;">                                        
+                                        <span t-field="o.number"/>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td style="width:40%;padding:2px;padding-right:9px;"><strong>Serie / Folio</strong></td>
+                                    <td style="width:60%;padding:2px;">
+                                        <span t-raw="'%s &lt;br&gt;' % o.invoice_sequence_id.approval_id and o.invoice_sequence_id.approval_id.serie or ''"/>
+                                        <span t-field="o.internal_number"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong>Fecha Emisión</strong></td>
+                                    <td style="padding:2px;">                                        
+                                        <span t-field="o.invoice_datetime"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:2px;padding-right:9px;"><strong>Certificado Emisor</strong></td>
+                                    <td style="padding:2px;"><span t-field="o.no_certificado"/></td>
+                                </tr>
+                                
+                            </table>  
+                        </td>
+                                   
+                    </tr>
+                </table>
+            </div>
+            
+
+            <table class="table table-condensed" style="font-size:9px">
+                <thead>
+                    <tr>
+                        <th style="width:10%;text-align:center;">Código</th>
+                        <th style="width:20%;text-align:center;">Descripción</th>
+                        <th style="width:10%;" class="text-right">Cantidad</th>
+                        <th style="width:10%;text-align:center;">Unidad de Medida</th>
+                        <th style="width:10%;" class="text-right">Precio Unitario</th>
+                        <th style="width:10%;" class="text-right">% Desc</th>
+                        <th style="width:10%;" class="text-right">% IVA</th>
+                        <th style="width:10%;" class="text-right">Subtotal 0%</th>
+                        <th style="width:10%;" class="text-right">Subtotal 16%</th>
+                    </tr>
+                </thead>
+                <tbody class="invoice_tbody">
+                    <tr t-foreach="o.invoice_line" t-as="l" style="">
+                        <td style="text-align:center;">
+                            <span t-raw="'%s &lt;br&gt;' % l.product_id and l.product_id.default_code or ''"/></td>
+                        <td>
+                            <span t-raw="'%s &lt;br&gt;' % l.name if l.name.find('] ') &lt; 0 else l.name[l.name.find('] ')+2:]"/></td>
+                        <td class="text-right"><span t-field="l.quantity"/></td>
+                        <td><span t-field="l.uos_id"/></td>
+                        <td class="text-right"><span t-field="l.price_unit"/></td>
+                        <td class="text-right"><span t-field="l.discount"/></td>
+                        <td class="text-right"><span t-field="l.invoice_line_tax_id.name"/></td>
+                        <td class="text-right"><span t-field="l.price_subtotal" 
+                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>
+                        <td class="text-right"><span t-field="l.price_subtotal" 
+                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-condensed" style="font-size:9px">
+                <tr>
+                    <td rowspan="3" style="width:70%;border: 1px solid gray; border-collapse: collapse;">
+                        <table style="border: 0px; border-collapse: collapse; ">
+                                
+                                <tr><td style="padding:2px;padding-right:9px;">Cantidad con letra:</td></tr>
+                                                                  
+                                <tr><td class="text-center"><span t-field="o.amount_to_text"/></td></tr>
+                               
+                                <tr><td class="text-center"><b>PAGO EN UNASOLA EXHIBICION</b></td></tr>
+                                
+                                <tr><td class="text-center">MÉTODO DE PAGO <span t-raw="'%s &lt;br&gt;' % o.pay_method_id and o.pay_method_id.name or 'No Identificado'"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" colspan="2" style="padding:2px;padding-center:9px;">Últimos 4 dígitos de la cuenta bancaria: <span t-raw="'%s &lt;br&gt;' % o.acc_payment and o.acc_payment.last_acc_number or 'N/A'"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-justify">Si el pago se especificó con cheque, este deberá ser nominativo y a favor de<b>CASA BALTAZAR, S.A. DE C.V.  </b> y contener la leyenda "PARA EL ABONO EN CUENTA DEL BENEFICIARIO". Los títulos de crédito dado en pago de la cantidad que ampare la presente factura se presumen recibidos SALVO BUEN COBRO.</td>
+
+
+                                </tr>
+                                
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table" >
+                            <tr class="border-black">
+                                <td class="text-right"><strong>SubTotal</strong></td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="o.tax_line" t-as="t" class="border-black">
+                                <td class="text-right"><span t-field="t.name"/></td>
+                                <td class="text-right">
+                                    <span t-field="t.amount"
+                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td class="text-right"><strong>Total</strong></td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>  
+
+            <table class="table table-condensed" style="font-size:9px">
+                <tr>
+                    <td>Cadena Original:<BR/><span t-field="o.cfdi_cadena_original" style="display:block;width:500px;word-wrap:break-word;"/></td>
+                </tr>
+                <tr>
+                    <td>Sello Digital Emisor:<BR/><span t-field="o.sello" style="display:block;width:500px;word-wrap:break-word;"/></td>
+                </tr>
+                <tr>
+                    <td>Sello Digital SAT:<BR/><span t-field="o.cfdi_sello" style="display:block;width:500px;word-wrap:break-word;"/></td>
+                </tr>
+            </table>
+
+            <table class="table table-condensed" style="font-size:9px">
+                <tr>
+                    <td rowspan="3">
+                        <img t-if="o.cfdi_cbb" t-att-src="'data:image/png;base64,%s' % o.cfdi_cbb" style="width:4cm;height:4cm;"/>
+                    </td>
+                    <td>Folio Fiscal UUID:<BR/><span t-field="o.cfdi_folio_fiscal" style="display:block;width:500px;word-wrap:break-word;"/></td> 
+
+                </tr>
+                <tr>
+                    <td>No. de Serie del Certificado del SAT:<BR/><span t-field="o.cfdi_no_certificado" style="display:block;width:500px;word-wrap:break-word;"/></td>
+                </tr>
+                <tr>
+                    <td>Fecha y Hora de Certificado:<BR/><span t-field="o.cfdi_fecha_timbrado" style="display:block;width:500px;word-wrap:break-word;"/></td>
+                </tr>
+            </table>
+
+        </div>
+            </xpath>
+        </template>
+
+</data>
+</openerp>

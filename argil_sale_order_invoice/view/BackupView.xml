@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+        
+        
+        <record model="ir.ui.view" id="view_sale_order_form_pos_invoice">
+            <field name="name">sale.order.invoice</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sale_order_form"/>
+            <field name="arch" type="xml">
+                <button name="action_invoice" position="replace"></button>
+            </field>
+        </record>
+	  
+
+	  
+		<record id="view_pos_order_invoice_wizard" model="ir.ui.view">
+			<field name="name">POS Order to Invoice</field>
+			<field name="model">sale.order.invoice_wizard</field>
+			<field name="arch" type="xml">
+				<form string="POS Order to Invoice">
+					<group string="This wizard will create Invoice(s) from selected POS Orders" col="4" colspan="4">
+						<field name="date"
+							   on_change="on_change_date(date)"/>
+						<field name="period_id"/>
+						<field name="journal_id" colspan="4" domain="[('type', '=', 'sale')]"/>
+						<separator string="Tickets to be invoiced" colspan="4" />
+						<field name="ticket_ids" colspan="4" nolabel="1">
+                            <tree editable="top" create="false">
+                                <field name="date_order" />
+                                <field name="ticket_id" />
+                                <field name="session_id" />
+                                <field name="pos_reference" />
+                                <field name="user_id" />
+                                <field name="amount_total" />
+                                <field name="partner_id" />
+                                <field name="invoice_2_general_public" attrs="{'readonly': [('partner_id', '=', False)]}"/>
+                            </tree>
+                        </field>
+					</group>
+					<footer>
+						<button name="create_invoice_from_pos" string="Create Invoice" type="object" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		
+        <act_window name="Create Invoices"
+            res_model="sale.order.invoice_wizard"
+            src_model="sale.order"
+            key2="client_action_multi"
+            multi="True"
+            view_mode="form"
+            view_type="form"
+            target="new"
+            id="action_pos_order_invoice"/>
+		
+		
+
+  </data>
+</openerp>

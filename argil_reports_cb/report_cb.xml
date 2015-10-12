@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- =============== REPORTE JASPER ACTION XML ============================ -->
+
+    <record id="product_template_report_jasper_etiquetas_dos" model="ir.actions.report.xml">
+        <field name="string">Etiquetas de Productos 2 c/hoja</field>
+        <field name="auto">True</field>
+        <field name="model">product.template</field>
+        <field name="jasper_model_id" ref="product.model_product_template"/>
+        <field name="name">Etiquetas de Productos 2 c/hoja</field>
+        <field name="report_name">Etiquetas.de.Productos.2.c/hoja</field>
+        <field name="rml">argil_reports_cb/report/EtiquetasProductos2.jrxml</field>
+        <field name="report_rml">argil_reports_cb/report/EtiquetasProductos2.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="etiquetas2en1_report_jasper_values" model="ir.values">
+                <field name="name">Etiquetas de Productos 2 c/hoja</field>
+                <field name="model">product.template</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(product_template_report_jasper_etiquetas_dos)" />
+            </record>
+
+
+    <record id="product_template_report_jasper_etiquetas_tres" model="ir.actions.report.xml">
+        <field name="string">Etiquetas de Productos 3 c/hoja</field>
+        <field name="auto">True</field>
+        <field name="model">product.template</field>
+        <field name="jasper_model_id" ref="product.model_product_template"/>
+        <field name="name">Etiquetas de Productos 3 c/hoja</field>
+        <field name="report_name">Etiquetas.de.Productos.3.c/hoja</field>
+        <field name="rml">argil_reports_cb/report/EtiquetasProductos3.jrxml</field>
+        <field name="report_rml">argil_reports_cb/report/EtiquetasProductos3.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="etiquetas_report_jasper_values" model="ir.values">
+                <field name="name">Etiquetas de Productos 3 c/hoja</field>
+                <field name="model">product.template</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(product_template_report_jasper_etiquetas_tres)" />
+            </record>
+
+    <record id="account_voucher_report_jasper_check_banorte1" model="ir.actions.report.xml">
+        <field name="string">Cheque Banorte 1</field>
+        <field name="auto">True</field>
+        <field name="model">account.voucher</field>
+        <field name="jasper_model_id" ref="account_voucher.model_account_voucher" />
+        <field name="name">Cheque Banorte 1</field>
+        <field name="report_name">Cheque.Banorte.1</field>
+        <field name="rml">argil_reports_cb/report/CHEQUE_BANORTE_1.jrxml</field>
+        <field name="report_rml">argil_reports_cb/report/CHEQUE_BANORTE_1.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="voucher_banorte1_jasper_sup_values" model="ir.values">
+                <field name="name">Cheque Banorte 1</field>
+                <field name="model">account.voucher</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(account_voucher_report_jasper_check_banorte1)" />
+            </record>
+
+    <record id="account_voucher_report_jasper_check_banorte2" model="ir.actions.report.xml">
+        <field name="string">Cheque Banorte 2</field>
+        <field name="auto">True</field>
+        <field name="model">account.voucher</field>
+        <field name="jasper_model_id" ref="account_voucher.model_account_voucher" />
+        <field name="name">Cheque Banorte 2</field>
+        <field name="report_name">Cheque.Banorte.2</field>
+        <field name="rml">argil_reports_cb/report/CHEQUE_BANORTE_2.jrxml</field>
+        <field name="report_rml">argil_reports_cb/report/CHEQUE_BANORTE_2.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="voucher_banorte2_jasper_sup_values" model="ir.values">
+                <field name="name">Cheque Banorte 2</field>
+                <field name="model">account.voucher</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(account_voucher_report_jasper_check_banorte2)" />
+            </record>
+
+
+    <record id="account_voucher_report_jasper_check_bbva" model="ir.actions.report.xml">
+        <field name="string">Cheque BBVA Bancomer</field>
+        <field name="auto">True</field>
+        <field name="model">account.voucher</field>
+        <field name="jasper_model_id" ref="account_voucher.model_account_voucher" />
+        <field name="name">Cheque BBVA Bancomer</field>
+        <field name="report_name">Cheque.BBVA.Bancomer</field>
+        <field name="rml">argil_reports_cb/report/CHEQUE_BBVA_BANCOMER.jrxml</field>
+        <field name="report_rml">argil_reports_cb/report/CHEQUE_BBVA_BANCOMER.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="voucher_bbva_jasper_sup_values" model="ir.values">
+                <field name="name">Cheque BBVA Bancomer</field>
+                <field name="model">account.voucher</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(account_voucher_report_jasper_check_bbva)" />
+            </record>
+
+
+    <record id="sale_order_report_jasper_report_sale_order" model="ir.actions.report.xml">
+        <field name="string">Reporte Pedido de Venta</field>
+        <field name="auto">True</field>
+        <field name="model">sale.order</field>
+        <field name="jasper_model_id" ref="sale.model_sale_order" />
+        <field name="name">Reporte Pedido de Venta</field>
+        <field name="report_name">Reporte.Pedido.de.Venta</field>
+        <field name="rml">argil_reports_cb/report/Pedido_de_Venta.jrxml</field>
+        <field name="report_rml">argil_reports_cb/report/Pedido_de_Venta.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="sale_order_jasper_sup_values" model="ir.values">
+                <field name="name">Reporte Pedido de Venta</field>
+                <field name="model">sale.order</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(sale_order_report_jasper_report_sale_order)" />
+            </record>
+
+
+    </data>
+</openerp>

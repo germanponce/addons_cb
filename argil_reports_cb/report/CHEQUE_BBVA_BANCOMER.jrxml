@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CHEQUE BANORTE" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.210000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;move_ids&apos;]"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Total-amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Total-amount]]></fieldDescription>
+	</field>
+	<field name="Cantidad_en_letra-amount_to_text" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cantidad_en_letra-amount_to_text]]></fieldDescription>
+	</field>
+	<field name="Fecha-date" class="java.util.Date">
+		<fieldDescription><![CDATA[/data/record/Fecha-date]]></fieldDescription>
+	</field>
+	<field name="Nombre-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Nombre-name]]></fieldDescription>
+	</field>
+	<title>
+		<band height="97">
+			<textField>
+				<reportElement x="17" y="31" width="247" height="20"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="17" y="57" width="284" height="20"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Cantidad_en_letra-amount_to_text}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="368" y="26" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total-amount}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="223" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{Fecha-date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

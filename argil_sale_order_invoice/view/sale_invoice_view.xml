@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+	<data>
+
+        <record model="ir.ui.view" id="view_sale_order_form_argil_invoice">
+            <field name="name">sale.order.invoice</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                <field name="shipped" position="after">
+                    <field name="invoice_2_general_public" string="Facturado Publico en General" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sale_order_tree_argil_invoice">
+            <field name="name">sale.order.invoice.tree.argl</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="invoice_2_general_public" string="Facturado Publico en General" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_make_invoice_argil_form_view_cb">
+            <field name="name">sale_make_invoice_argil_cb</field>
+            <field name="model">sale.make.invoice</field>
+            <field name="type">form</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="sale.view_sale_order_make_invoice"/>
+            <field name="arch" type="xml">
+                
+               <field name="grouped" position="replace" >
+                 <field name="invoice_2_general_public" />
+                 <field name="grouped" attrs="{'invisible':[('invoice_2_general_public','=',True)]}"/>
+
+               </field>
+               <field name="invoice_date" position="after">
+                 <separator string="Pedidos a Facturar" colspan="4"  attrs="{'invisible': [('invoice_2_general_public','=',False)]}"/>
+                        <field name="order_ids" colspan="4" nolabel="1" attrs="{'invisible': [('invoice_2_general_public','=',False)]}">
+                            <tree editable="top" create="false">
+                                <field name="date_order" />
+                                <field name="order_id" />
+                                <field name="name" />
+                                <field name="user_id" />
+                                <field name="amount_total" />
+                                <field name="partner_id" />
+                                <field name="invoice_2_general_public" attrs="{'readonly': [('partner_id', '=', False)]}"/>
+                            </tree>
+                        </field>
+               </field>
+
+            </field>
+        </record>
+		
+
+  </data>
+</openerp>

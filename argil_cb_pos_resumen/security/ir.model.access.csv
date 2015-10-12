@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pos_order_report_jasper,pos.order.report.jasper,model_pos_order_report_jasper,point_of_sale.group_pos_user,1,1,1,1
+pos_order_report_jasper_line,pos.order.report.jasper.line,model_pos_order_report_jasper_line,point_of_sale.group_pos_user,1,1,1,1
+pos_order_report_journal_line,pos_order.report.journal.line,model_pos_order_report_journal_line,point_of_sale.group_pos_user,1,1,1,1

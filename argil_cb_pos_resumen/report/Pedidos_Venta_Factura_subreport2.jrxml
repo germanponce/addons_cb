@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pedidos_Venta_Factura_subreport2" language="groovy" pageWidth="266" pageHeight="752" columnWidth="266" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;sale_journal_ids&apos;]"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Total-sum" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Metodos_de_Pago-sale_journal_ids/Total-sum]]></fieldDescription>
+	</field>
+	<field name="Descripcion-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Metodos_de_Pago-sale_journal_ids/Descripcion-name]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="0" width="100" height="13"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Descripcion-name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="107" y="0" width="126" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total-sum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

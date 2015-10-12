@@ -4,7 +4,7 @@
 #
 #    Copyright (c) 2014 Argil Consulting - http://www.argil.mx
 ############################################################################
-#    Coded by: Israel Cruz Argil (israel.cruz@argil.mx)
+#    Coded by: German Ponce Dominguez (german.ponce@argil.mx)
 ############################################################################
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,4 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#import stock
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+import pos

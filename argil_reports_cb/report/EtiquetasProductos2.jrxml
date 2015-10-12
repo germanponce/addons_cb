@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factura" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="61"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Codigo_EAN13-ean13" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Codigo_EAN13-ean13]]></fieldDescription>
+	</field>
+	<field name="Referencia_interna-default_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Referencia_interna-default_code]]></fieldDescription>
+	</field>
+	<field name="Precio_de_venta-list_price" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Precio_de_venta-list_price]]></fieldDescription>
+	</field>
+	<field name="Nombre-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Unidad_de_medida-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Unidad_de_medida-uom_id/Unidad_de_medida-name]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="372" splitType="Stretch">
+			<textField>
+				<reportElement x="405" y="2" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Codigo_EAN13-ean13}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="2" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Referencia_interna-default_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="22" width="426" height="104"/>
+				<textElement textAlignment="Center">
+					<font size="80"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="152" width="117" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="30"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Unidad_de_medida-name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="93" y="161" width="49" height="35"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;#,##0.00-">
+				<reportElement x="112" y="126" width="340" height="118"/>
+				<textElement>
+					<font size="90"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Precio_de_venta-list_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

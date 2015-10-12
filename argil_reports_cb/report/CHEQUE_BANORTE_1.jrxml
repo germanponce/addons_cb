@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CHEQUE BANORTE" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;move_ids&apos;]"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Total-amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Total-amount]]></fieldDescription>
+	</field>
+	<field name="Cantidad_en_letra-amount_to_text" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cantidad_en_letra-amount_to_text]]></fieldDescription>
+	</field>
+	<field name="Nombre-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Ref.-reference" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Ref.-reference]]></fieldDescription>
+	</field>
+	<field name="Codigo-code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cuenta-account_id/Codigo-code]]></fieldDescription>
+	</field>
+	<field name="Nombre-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cuenta-account_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Codigo-code2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Debitos-line_dr_ids/Cuenta-account_id/Codigo-code]]></fieldDescription>
+	</field>
+	<field name="Nombre-name3" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Debitos-line_dr_ids/Cuenta-account_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Saldo_ajustado-adjusted_balance" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cuenta-account_id/Hijos_consolidados-child_consol_ids/Saldo_ajustado-adjusted_balance]]></fieldDescription>
+	</field>
+	<field name="Saldo_pendiente-balance" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cuenta-account_id/Hijos_consolidados-child_consol_ids/Saldo_pendiente-balance]]></fieldDescription>
+	</field>
+	<field name="Debe-debit" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Apuntes_contables-move_ids/Debe-debit]]></fieldDescription>
+	</field>
+	<field name="Haber-credit" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Apuntes_contables-move_ids/Haber-credit]]></fieldDescription>
+	</field>
+	<field name="Codigo-code3" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Apuntes_contables-move_ids/Cuenta-account_id/Codigo-code]]></fieldDescription>
+	</field>
+	<field name="Nombre-name4" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Apuntes_contables-move_ids/Cuenta-account_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Referencia-ref" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Apuntes_contables-move_ids/Referencia-ref]]></fieldDescription>
+	</field>
+	<field name="Ref.-reference2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Ref.-reference]]></fieldDescription>
+	</field>
+	<field name="Nombre_del_diario-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Apuntes_contables-move_ids/Diario-journal_id/Nombre_del_diario-name]]></fieldDescription>
+	</field>
+	<field name="Fecha-date" class="java.util.Date">
+		<fieldDescription><![CDATA[/data/record/Fecha-date]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="364" y="4" width="100" height="20"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{Fecha-date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="298" splitType="Stretch">
+			<textField>
+				<reportElement x="77" y="4" width="161" height="20"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="47" width="266" height="20"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Cantidad_en_letra-amount_to_text}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="221" width="129" height="20"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Ref.-reference2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="413" y="0" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total-amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51">
+			<textField>
+				<reportElement x="107" y="0" width="266" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Codigo-code3}+$F{Nombre-name4}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="473" y="0" width="71" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Haber-credit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="378" y="0" width="75" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[( $F{Debe-debit} != null ? $F{Debe-debit} : 0.00 )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="0" width="60" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Referencia-ref}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

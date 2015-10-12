@@ -29,12 +29,18 @@
 POS Ticket - Casa Baltasar
 ==========================
 
-Este módulo tiene la configuración del ticket del POS de Casa Baltazar
+Este módulo tiene la configuración del ticket del POS de Casa Baltazar para Web y Server.
+
+Otro punto de este modulo es que agrega el monto en letra en el pedido de venta generado por el POS.
 
     """, 
     "website": "http://www.argil.mx", 
     "depends" : ["point_of_sale"],
-    "data": ["pos_ticket_template.xml"],
+    "data": [
+            "pos_ticket_template.xml",
+            "pos.xml",
+            "report_receipt.xml"],
+            
     "qweb" : [
         'static/src/xml/pos_cb.xml',
     ], 

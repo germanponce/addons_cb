@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <!--====================== REPORTE ==========================-->
+
+
+    <record id="pos_detail_sales_resumen_argil" model="ir.actions.report.xml">
+        <field name="string">Detalle de las Ventas</field>
+        <field name="auto">True</field>
+        <field name="model">pos.order.report.jasper</field>
+        <field name="jasper_model_id" ref="argil_cb_pos_resumen.model_pos_order_report_jasper"/>
+        <field name="name">Detalle de las Ventas</field>
+        <field name="report_name">Detalle-Ventas</field>
+        <field name="rml">argil_cb_pos_resumen/report/Pedidos_Venta_Factura.jrxml</field>
+        <field name="report_rml">argil_cb_pos_resumen/report/Pedidos_Venta_Factura.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="etiquetas2en1_report_jasper_values" model="ir.values">
+                <field name="name">Detalle de las Ventas</field>
+                <field name="model">pos.order.report.jasper</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(pos_detail_sales_resumen_argil)" />
+            </record>
+
+        <!--====================================FORM VIEW================================-->
+        <record model="ir.ui.view" id="report_pos_report_details_jasper_form">
+          <field name="name">pos.order.report.jasper.form</field>
+          <field name="model">pos.order.report.jasper</field>
+          <field name="type">form</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <form string="Reporte Detallado de Ventas" version="7.0">
+                <header>
+                </header>
+                <sheet>
+                    <group col="4">
+                        <field name="date_start" readonly="1"/>
+                        <field name="date_end" readonly="1"/>
+                        <field name="company_id" readonly="1"/>
+                        <field name="date" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Pedidos de Venta">
+                            <field name="sale_order_ids" readonly="1">
+                                <tree string="Pedidos">
+                                    <field name="order_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Vendedores">
+                            <field name="user_ids" readonly="1"/>
+                        </page>
+                        <page string="Resumen">
+                            <group col="4">
+                                <group>
+                                    <field name="total_sale" readonly="1"/>
+                                    <field name="total_qty" readonly="1"/>
+                                    <field name="total_invoiced" readonly="1"/>
+                                </group>
+                                <group>
+                                    <field name="total_discount" readonly="1"/>
+                                    <field name="total_paid" readonly="1"/>
+                                    <field name="total_of_the_day" readonly="1"/>
+                                </group>
+                            </group>
+                            <separator string="Metodos de Pago" />
+                            <field name="sale_journal_ids" readonly="1">
+                                <tree string="Metodos de Pago">
+                                    <field name="name" />
+                                    <field name="sum" />
+                                </tree>
+                            </field>
+                            <separator string="Impuestos" />
+                            <field name="sale_tax_ids" readonly="1">
+                                <tree string="Impuestos">
+                                    <field name="name" />
+                                    <field name="amount" />
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+
+            </form>
+          </field>
+        </record>
+        <record model="ir.ui.view" id="report_pos_report_details_jasper_tree">
+          <field name="name">pos.order.report.jasper.tree</field>
+          <field name="model">pos.order.report.jasper</field>
+          <field name="type">tree</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date" string="Fecha de Consulta"/>
+
+            </tree>
+          </field>
+        </record>
+
+        <!--====================================ACTIONS================================-->
+        <record model="ir.actions.act_window" id="action_pos_report_details_jasper_report">
+            <field name="name">Reporte Detallado de Ventas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.order.report.jasper</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem icon="STOCK_PRINT" action="action_pos_report_details_jasper_report"
+                id="menu_pos_details_jasper_rep" parent="point_of_sale.menu_point_rep" sequence="7" />
+
+</data>
+</openerp>

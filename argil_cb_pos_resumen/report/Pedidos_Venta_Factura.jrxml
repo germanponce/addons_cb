@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pedidos_Venta_Factura" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.9487171000000034"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="60"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;sale_order_ids/order_id/lines&apos;]"/>
+	<parameter name="SUBREPORT_DS" class="java.lang.Object"/>
+	<parameter name="SUBREPORT_DS2" class="java.lang.Object"/>
+	<parameter name="SUBREPORT_DS3" class="java.lang.Object"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/id]]></fieldDescription>
+	</field>
+	<field name="Notas-note" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Origen_del_Pedido-order_id/Notas-note]]></fieldDescription>
+	</field>
+	<field name="Referencia_del_pedido-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Origen_del_Pedido-order_id/Referencia_del_pedido-name]]></fieldDescription>
+	</field>
+	<field name="Fecha_pedido-date_order" class="java.util.Date">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Origen_del_Pedido-order_id/Fecha_pedido-date_order]]></fieldDescription>
+	</field>
+	<field name="Total-amount_total" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Origen_del_Pedido-order_id/Total-amount_total]]></fieldDescription>
+	</field>
+	<field name="Logo-logo" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Logo-logo]]></fieldDescription>
+	</field>
+	<field name="Nombre_de_la_compania-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Nombre_de_la_compania-name]]></fieldDescription>
+	</field>
+	<field name="Calle-street" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Calle-street]]></fieldDescription>
+	</field>
+	<field name="Calle2-street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Calle2-street2]]></fieldDescription>
+	</field>
+	<field name="Ciudad-city" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Ciudad-city]]></fieldDescription>
+	</field>
+	<field name="Nombre_del_pais-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Pais-country_id/Nombre_del_pais-name]]></fieldDescription>
+	</field>
+	<field name="Nombre_provincia-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Provincia-state_id/Nombre_provincia-name]]></fieldDescription>
+	</field>
+	<field name="C.P.-zip" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/C.P.-zip]]></fieldDescription>
+	</field>
+	<field name="Telefono-phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Telefono-phone]]></fieldDescription>
+	</field>
+	<field name="Fecha_Consulta-date" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Fecha_Consulta-date]]></fieldDescription>
+	</field>
+	<field name="Date_End-date_end" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Date_End-date_end]]></fieldDescription>
+	</field>
+	<field name="Date_Start-date_start" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Date_Start-date_start]]></fieldDescription>
+	</field>
+	<field name="Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Vendedor-user_id/Name-name]]></fieldDescription>
+	</field>
+	<field name="Nombre-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Cliente-partner_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Producto-product_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Lineas_de_venta-lines/Producto-product_id]]></fieldDescription>
+	</field>
+	<field name="Cantidad-qty" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Lineas_de_venta-lines/Cantidad-qty]]></fieldDescription>
+	</field>
+	<field name="Subtotal_neto-price_subtotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Lineas_de_venta-lines/Subtotal_neto-price_subtotal]]></fieldDescription>
+	</field>
+	<field name="Nombre3-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Lineas_de_venta-lines/Producto-product_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Nombre4-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Lineas_de_venta-lines/Producto-product_id/UoM-uom_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Precio_unidad-price_unit" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Pedidos_de_Venta_Relacionados-sale_order_ids/Pedido_de_Venta__POS-order_id/Lineas_de_venta-lines/Precio_unidad-price_unit]]></fieldDescription>
+	</field>
+	<field name="Name-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Usuarios-user_ids/Name-name]]></fieldDescription>
+	</field>
+	<field name="Descuento_Total-total_discount" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Descuento_Total-total_discount]]></fieldDescription>
+	</field>
+	<field name="Total_del_dia-total_of_the_day" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Total_del_dia-total_of_the_day]]></fieldDescription>
+	</field>
+	<field name="Total_Pagado-total_paid" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Total_Pagado-total_paid]]></fieldDescription>
+	</field>
+	<field name="Cantidad_de_Producto-total_qty" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Cantidad_de_Producto-total_qty]]></fieldDescription>
+	</field>
+	<field name="Total_de_Ventas-total_sale" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Total_de_Ventas-total_sale]]></fieldDescription>
+	</field>
+	<field name="Total_Facturado-total_invoiced_1" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Total_Facturado-total_invoiced]]></fieldDescription>
+	</field>
+	<variable name="Total-amount_total_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{Total-amount_total}]]></variableExpression>
+	</variable>
+	<group name="lineas">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupHeader>
+			<band height="58">
+				<textField>
+					<reportElement x="81" y="0" width="0" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{id}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Transparent" x="59" y="34" width="487" height="10" backcolor="#3980C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Productos]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="59" y="14" width="135" height="20"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{Referencia_del_pedido-name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="59" y="44" width="203" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Producto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="262" y="44" width="100" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unidad M.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="362" y="44" width="72" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Precio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="434" y="44" width="49" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cantidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="483" y="44" width="63" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Subtotal]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="194" y="14" width="101" height="20"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{Fecha_pedido-date_order}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="59" y="0" width="135" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Pedido]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="194" y="0" width="101" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="295" y="0" width="113" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vendedor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="408" y="0" width="138" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cliente]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="295" y="14" width="113" height="20"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{Name-name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="408" y="14" width="138" height="20"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="29">
+				<rectangle>
+					<reportElement mode="Transparent" x="483" y="0" width="63" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</rectangle>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="483" y="0" width="55" height="14"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total-amount_total}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="434" y="0" width="49" height="14" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total   ]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="214" splitType="Stretch">
+			<textField>
+				<reportElement x="211" y="62" width="252" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Calle-street} + " " + $F{Calle2-street2} + "\n" + $F{Ciudad-city}+", CP " + $F{C.P.-zip} + ", " + $F{Nombre_provincia-name} + ", " + $F{Nombre_del_pais-name}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="59" y="19" width="104" height="84"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{Logo-logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="163" y="19" width="352" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_de_la_compania-name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="211" y="49" width="252" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="296" y="87" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Tel.  "+$F{Telefono-phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="151" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Fecha Inicial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="164" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Fecha Final:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="194" width="487" height="14" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle de los Pedidos de Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="138" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Compañia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="177" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Fecha Impresion:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="145" y="138" width="150" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="148" y="138" width="147" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_de_la_compania-name}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="145" y="151" width="150" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="145" y="164" width="150" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="145" y="177" width="150" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="148" y="177" width="55" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Fecha_Consulta-date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="164" width="55" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Date_End-date_end}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="151" width="55" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Date_Start-date_start}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="348" y="138" width="198" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendedores]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="348" y="151" width="198" height="39"/>
+				<dataSourceExpression><![CDATA[$P{SUBREPORT_DS}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Pedidos_Venta_Factura_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement mode="Transparent" x="348" y="151" width="198" height="39"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement x="528" y="0" width="18" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="503" y="0" width="25" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="362" y="0" width="72" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="262" y="0" width="100" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre4-name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="363" y="0" width="71" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Precio_unidad-price_unit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="434" y="0" width="49" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Cantidad-qty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="483" y="0" width="55" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Subtotal_neto-price_subtotal}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="59" y="0" width="203" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="262" y="0" width="100" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="434" y="0" width="49" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="59" y="0" width="203" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre3-name}]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<rectangle>
+					<reportElement mode="Transparent" x="483" y="0" width="63" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</rectangle>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="6"/>
+	</lastPageFooter>
+	<summary>
+		<band height="165" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="59" y="65" width="243" height="72"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="302" y="52" width="244" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Impuestos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="52" width="243" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Metodos de Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="0" width="487" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resumen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="13" width="115" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Total ventas (ingresos) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="39" width="115" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Total facturado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="26" width="115" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Ctd. producto :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="174" y="26" width="128" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="174" y="13" width="128" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="174" y="39" width="128" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="417" y="13" width="129" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="302" y="13" width="115" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Total descuento :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="417" y="26" width="129" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="417" y="39" width="129" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="302" y="39" width="115" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Total del día :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="302" y="26" width="115" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Total pagado :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="302" y="65" width="244" height="72"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="419" y="39" width="127" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total_del_dia-total_of_the_day}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="419" y="26" width="127" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total_Pagado-total_paid}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="176" y="26" width="126" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Cantidad_de_Producto-total_qty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="176" y="13" width="126" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total_de_Ventas-total_sale}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="59" y="67" width="243" height="70"/>
+				<dataSourceExpression><![CDATA[$P{SUBREPORT_DS2}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Pedidos_Venta_Factura_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="303" y="67" width="243" height="70"/>
+				<dataSourceExpression><![CDATA[$P{SUBREPORT_DS3}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Pedidos_Venta_Factura_subreport3.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="176" y="39" width="126" height="13">
+					<printWhenExpression><![CDATA[$F{Total_Facturado-total_invoiced_1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[$ 0.0]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="176" y="39" width="127" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[( $F{Total_Facturado-total_invoiced_1}.isEmpty() ? null : Double.parseDouble($F{Total_Facturado-total_invoiced_1}) )]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="419" y="13" width="127" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[( $F{Descuento_Total-total_discount}.isEmpty() ? null : Double.parseDouble($F{Descuento_Total-total_discount})  )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="419" y="13" width="126" height="13">
+					<printWhenExpression><![CDATA[$F{Descuento_Total-total_discount}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[$ 0.0]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
