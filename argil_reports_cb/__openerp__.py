@@ -12,7 +12,7 @@
     """,
     'author': 'Esther Flores',
     'website': 'http://www.argil.mx',
-    'depends': ['jasper_reports','account_voucher','sale'],
+    'depends': ['jasper_reports','account_voucher','sale','sale_stock'],
     'data': [
         "report_cb.xml",
     ],

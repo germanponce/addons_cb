@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-    	<!-- =============== REPORTE JASPER ACTION XML ============================ -->
+        <!-- =============== HERENCIA ============================ -->
+        <record id="view_sale_inherit_addnd" model="ir.ui.view">
+            <field name="name">sale.order.addnd</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                 <field name="incoterm" position="before">
+                    <field name="pay_method_id" />
+                    <field name="transport" />
+                 </field>
+            </field>
+        </record>   
+
+        <!-- =============== REPORTES JASPER ============================ -->
 
     <record id="product_template_report_jasper_etiquetas_dos" model="ir.actions.report.xml">
         <field name="string">Etiquetas de Productos 2 c/hoja</field>

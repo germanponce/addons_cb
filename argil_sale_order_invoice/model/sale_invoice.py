@@ -158,19 +158,19 @@ class sale_order(osv.osv):
             uom_obj = self.pool.get('product.uom')
             uom_id = uom_obj.search(cr, uid, [('use_4_invoice_general_public','=',1)], limit=1, context=context)
             if not uom_id:
-                raise osv.except_osv(_('Error!'), _('Please configure an Unit of Measure as default for use as UoM in Invoice Lines.'))    
+                raise osv.except_osv(_('Error!'), _('Por favor configura una Unidad de Medida por defecto para la Facturacion de Publico en General.'))    
             
             acc = partner.property_account_receivable.id
             print "###########################  journal_id", journal_id
             inv = {
-                'name'      : _('From POS Orders'),
-                'origin'    : _('POS Orders from %s' % (date[8:10]+'/'+date[5:7]+'/'+date[0:4])),
+                'name'      : _('Factura Cliente'),
+                'origin'    : _('Pedidos de Venta %s' % (date[8:10]+'/'+date[5:7]+'/'+date[0:4])),
                 'account_id': acc,
                 'journal_id': journal_id or order.sale_journal.id,
                 'type'      : 'out_invoice',
                 'reference' : order.name,
                 'partner_id': partner.id,
-                'comment'   : _('Invoice created from POS Orders'),
+                'comment'   : _('Factura Creada desde Pedidos de Venta.'),
                 'currency_id': order.pricelist_id.currency_id.id, # considering partner's sale pricelist's currency
             }
             inv.update(inv_ref.onchange_partner_id(cr, uid, [], 'out_invoice', partner.id)['value'])

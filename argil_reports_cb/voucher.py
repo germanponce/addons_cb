@@ -79,7 +79,8 @@ class sale_order(osv.osv):
 
     _columns = {        
         'amount_to_text': fields.function(_amount_text, method=True, string='Monto en Letra', type='char', size=256, store=True),
-
+        'pay_method_id': fields.many2one('pay.method', 'Forma de Pago'),
+        'transport': fields.char('Transporte', size=128),
 
     }
 
