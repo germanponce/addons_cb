@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pedidos_Venta_Factura" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.948717100000005"/>
 	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="332"/>
+	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;report_lines/detail_id/detail_line&apos;]"/>
 	<parameter name="SUBREPORT_DS" class="java.lang.Object"/>
 	<parameter name="SUBREPORT_DS2" class="java.lang.Object"/>
@@ -251,7 +251,7 @@
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{Calle-street} + " " + $F{Calle2-street2} + "\n" + $F{Ciudad-city}+", CP " + $F{C.P.-zip} + ", " + $F{Nombre_provincia-name} + ", " + $F{Nombre_del_pais-name}]]></textFieldExpression>
 				</textField>
-				<image>
+				<image onErrorType="Icon">
 					<reportElement x="7" y="14" width="104" height="84"/>
 					<imageExpression class="java.lang.String"><![CDATA[$F{Logo-logo}]]></imageExpression>
 				</image>
