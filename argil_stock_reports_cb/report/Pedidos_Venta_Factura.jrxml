@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pedidos_Venta_Factura" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.948717100000005"/>
 	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="140"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;report_lines/detail_id/detail_line&apos;]"/>
 	<parameter name="SUBREPORT_DS" class="java.lang.Object"/>
 	<parameter name="SUBREPORT_DS2" class="java.lang.Object"/>
@@ -403,6 +403,66 @@
 						<printWhenExpression><![CDATA[$V{PAGE_COUNT} > 1]]></printWhenExpression>
 					</reportElement>
 				</break>
+				<rectangle>
+					<reportElement mode="Transparent" x="379" y="111" width="180" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="293" y="124" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Audito:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="293" y="111" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Valido:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="293" y="137" width="86" height="13" forecolor="#000000" backcolor="#C4C0C9"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Ajusto:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement mode="Transparent" x="379" y="124" width="180" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement mode="Transparent" x="379" y="137" width="180" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</rectangle>
 			</band>
 		</groupHeader>
 		<groupFooter>
