@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <!--====================== REPORTE ==========================-->
+
+
+    <record id="pos_stock_inventory_categ_report_argil" model="ir.actions.report.xml">
+        <field name="string">Inventario por Categoria</field>
+        <field name="auto">True</field>
+        <field name="model">pos.stock.inventory.categ</field>
+        <field name="jasper_model_id" ref="argil_stock_reports_cb.model_pos_stock_inventory_categ"/>
+        <field name="name">Inventario por Categoria</field>
+        <field name="report_name">Detalle-Inventario</field>
+        <field name="rml">argil_stock_reports_cb/report/Pedidos_Venta_Factura.jrxml</field>
+        <field name="report_rml">argil_stock_reports_cb/report/Pedidos_Venta_Factura.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+        <record id="pos_stock_inventory_categ_report_argil_values" model="ir.values">
+                <field name="name">Inventario por Categoria</field>
+                <field name="model">pos.stock.inventory.categ</field>
+                <field name="key2" eval="'client_print_multi'" />
+                <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(pos_stock_inventory_categ_report_argil)" />
+            </record>
+
+
+<!-- HERENCIA DE INVENTARIOS -->
+        <record id="herencia_stock_inventory_casa" model="ir.ui.view">
+            <field name="name">stock.inventory.herencia</field>
+            <field name="model">stock.inventory</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_inventory_form" />
+            <field name="arch" type="xml">
+              <field name="state" position="before" >
+                <button name="print_report"  string="Reporte por Categoria" type="object" icon="gtk-ok"/>
+                
+              </field>
+                
+             </field>
+        </record>
+
+        <!--====================================FORM VIEW================================-->
+        <record model="ir.ui.view" id="pos_stock_inventory_categ_detail_form">
+          <field name="name">pos.stock.inventory.categ.detail.form</field>
+          <field name="model">pos.stock.inventory.categ.detail</field>
+          <field name="type">form</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <form string="Inventario por Categoria" version="7.0">
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="product_category"/>
+                    </group>
+                    
+                    
+                    <notebook>
+                        <page string="Inventario por Categoria">
+                            <field name="detail_line" readonly="1">
+                                <tree string="Inventario por Categoria" editable="bottom">
+                                    <field name="location_id" />
+                                    <field name="product_id" />
+                                    <field name="product_uom_id" />
+                                    <field name="product_qty" />
+                                    <field name="default_code" />
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+
+            </form>
+          </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="pos_stock_inventory_categ_form">
+          <field name="name">pos.stock.inventory.categ.form</field>
+          <field name="model">pos.stock.inventory.categ</field>
+          <field name="type">form</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <form string="Reporte Inventario por Categoria" version="7.0">
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group col="4">
+                        <field name="company_id" readonly="1"/>
+                        <field name="date" readonly="1"/>
+                        <field name="user_id" readonly="1"/>
+                        <field name="location_id" readonly="1"/>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Productos por Categoria">
+                            <field name="report_lines">
+                                <tree string="Productos por Categoria" editable="bottom">
+                                    <field name="detail_id" />
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+
+            </form>
+          </field>
+        </record>
+
+        <record model="ir.ui.view" id="pos_stock_inventory_categ_tree">
+          <field name="name">pos.stock.inventory.categ.tree</field>
+          <field name="model">pos.stock.inventory.categ</field>
+          <field name="type">tree</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date" string="Fecha de Consulta"/>
+
+            </tree>
+          </field>
+        </record>
+
+        <!--====================================ACTIONS================================-->
+        <record model="ir.actions.act_window" id="action_pos_stock_inventory_categ">
+            <field name="name">Reporte Inventario por Categoria</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.stock.inventory.categ</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- ESTE MENU LO CREE SOLO PARA LAS PRUEBAS -->
+        <!-- <menuitem icon="STOCK_PRINT" action="action_pos_stock_inventory_categ"
+                id="menu_action_pos_stock_inventory_categ" parent="stock.menu_stock_inventory_control" sequence="150" /> -->
+</data>
+</openerp>

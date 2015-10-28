@@ -1,0 +1,77 @@
+<openerp>
+<data>
+
+        <!--======================FORM VIEW =======================-->
+
+    <template id="report_inventory_report_cb" inherit_id="stock.report_inventory">
+            <xpath expr="//div[@class='page']" position="replace">
+            <div class="page">
+                             
+                            <h2>
+                            Inventario de Existencias 
+                            </h2>
+                            <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th><strong>Inventario</strong></th>
+                                    <th><strong>Fecha</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.date"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th><strong>Ubicacion</strong></th>
+                                        <th><strong>Producto</strong></th>
+                                        <th><strong>No. Serie</strong></th>
+                                        <th><strong>Paquete</strong></th>
+                                        <th class="text-right"><strong>Cantidad</strong></th>
+                                        <th class="text-right"><strong>Exist. Fisica</strong></th>
+                                        <th class="text-right"><strong>Diferencia</strong></th>
+                                    </tr>
+                                </thead>
+                                <tr t-foreach="o.line_ids" t-as="line">
+                                    <td><span t-field="line.location_id"/></td>
+                                    <td><span t-field="line.product_id"/></td>
+                                    <td><span t-field="line.prod_lot_id"/></td>
+                                    <td><span t-field="line.package_id"/></td>
+                                    <td class="text-right"><span t-field="line.product_qty"/> <span t-field="line.product_uom_id" groups="product.group_uom"/></td>
+                                    <td>__________</td>
+
+                                    <td>__________</td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <t t-if="o.filter == 'product' and o.product_id">
+                              <div class="row">
+                                <div class="col-xs-4 pull-right">
+                                     <table class="table table-condensed">
+                                        <tr class="border-black">
+                                            <td><strong>Cantidad Total</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.total_qty"/> <span t-field="o.product_id.uom_id"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                              </div>
+                            </t>
+                        </div>
+            </xpath>
+        </template>
+
+</data>
+</openerp>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pos_stock_inventory_categ,pos.stock.inventory.categ,model_pos_stock_inventory_categ,base.group_user,1,1,1,1
+pos_stock_inventory_categ_line,pos.stock.inventory.categ.line,model_pos_stock_inventory_categ_line,base.group_user,1,1,1,1
+pos_stock_inventory_categ_detail,pos.stock.inventory.categ.detail,model_pos_stock_inventory_categ_detail,base.group_user,1,1,1,1
+pos_stock_inventory_categ_detail_line,pos.stock.inventory.categ.detail.line,model_pos_stock_inventory_categ_detail_line,base.group_user,1,1,1,1
