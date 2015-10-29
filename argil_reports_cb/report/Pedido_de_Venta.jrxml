@@ -3,6 +3,7 @@
 	<property name="ireport.zoom" value="3.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="376"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;]"/>
 	<parameter name="SUBREPORT_DS" class="java.lang.Object"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>

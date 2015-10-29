@@ -3,6 +3,7 @@
 	<property name="ireport.zoom" value="1.948717100000009"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;order_line&apos;]"/>
 	<queryString language="xPath">
 		<![CDATA[]]>
 	</queryString>
@@ -216,7 +217,7 @@
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="49" width="36" height="10"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement verticalAlignment="Middle">
 					<font size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cantidad]]></text>
@@ -230,21 +231,21 @@
 			</staticText>
 			<staticText>
 				<reportElement x="66" y="49" width="132" height="10"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement verticalAlignment="Middle">
 					<font size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Descripción Articulo]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="197" y="49" width="60" height="10"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement verticalAlignment="Middle">
 					<font size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[IVA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="256" y="49" width="43" height="10"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement verticalAlignment="Middle">
 					<font size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Importe]]></text>
@@ -282,14 +283,14 @@
 			</textField>
 			<textField>
 				<reportElement x="66" y="0" width="131" height="10"/>
-				<textElement textAlignment="Center">
+				<textElement>
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{Name-name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="197" y="0" width="60" height="10"/>
-				<textElement textAlignment="Center">
+				<textElement>
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_impuesto-name}]]></textFieldExpression>
@@ -303,7 +304,7 @@
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="257" y="0" width="42" height="10"/>
-				<textElement textAlignment="Right">
+				<textElement>
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Precio_unitario-price_unit}]]></textFieldExpression>
